@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../App.css';
 //import Articles from './ApiCall';
-class Event extends Component {
+class Event extends React.Component {
     constructor() {
         super();
 
@@ -37,7 +37,7 @@ class Event extends Component {
             <div className="event">
 
                 <singlevent>
-                    {this.state.events.map((event, i) => <eventDescrib key={i} events={event}/>)}
+                    {this.state.events.map((el, i) => <EventDescrib key={i} {...el}/>)}
                 </singlevent>
 
             </div>
@@ -45,15 +45,15 @@ class Event extends Component {
     }
 }
 
-class eventDescrib extends React.Component {
+class EventDescrib extends React.Component {
 
     render() {
         return (
             <ul>
-                <li>{this.props.event.palce}</li>
-                <li>{this.props.event.date}</li>
-                <li>{this.props.event.sport}</li>
-                <li>{this.props.event.places}</li>
+                <li>{this.props.place}</li>
+                <li>{this.props.date}</li>
+                <li>{this.props.sport}</li>
+                <li>{this.props.places}</li>
             </ul>
 
         )
