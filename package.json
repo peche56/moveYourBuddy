@@ -6,7 +6,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "0.9.x",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "superagent-promise": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {

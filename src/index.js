@@ -6,8 +6,11 @@ import Event from './components/Event';
 import './index.css';
 
 ReactDOM.render(
-  <Event />,
-
+  <div>
+    <App />
+    <User />
+    <Event />
+</div>,
   document.getElementById('root')
 
 );
