@@ -58,7 +58,6 @@ class EventDescrib extends React.Component {
 
         )
     }
-
 }
 
 export default Event;
