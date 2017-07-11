@@ -11,31 +11,26 @@ import _superagent from 'superagent';
 const superagent = superagentPromise(_superagent, global.Promise);
 
 const API_USER = 'https://preprod.moveyourbuddy.io/players/me';
+const API_EVENTS = 'https://preprod.moveyourbuddy.io/players/events/search';
 
-
-const responseBody = res => res.body;
+const responseBody = res => res.body.data;
 const requests = {
-  get: url =>
-    superagent.get(`${API_USER}${url}`).then(responseBody)
-  .set('X-Token', 'abcdefgh')
+    get: url => superagent.get(`${API_EVENTS}${url}`).then(responseBody).set('X-Token', 'abcdefgh')
 };
 
 const Articles = {
-  all: page =>
-    requests.get(`/articles?limit=10`)
+    all: page => requests.get(`/articles?limit=10`)
 };
 
 export default {
-  Articles
+    Articles
 };
 console.log(Articles);
 
 ReactDOM.render(
-  <div>
-    <App />
-    <User />
-    <Event />
-</div>,
-  document.getElementById('root')
-
-);
+    <div>
+    <User/>
+    <App/>
+    <h2>Events around you :</h2>
+    <Event/>
+</div>, document.getElementById('root'));

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import logo from '../avatar-github.jpg';
 import '../App.css';
 
 class User extends Component {
 
   render() {
 
-    const userPix = logo.svg;
+    const userPix = require('../avatar-github.jpg');
     const userFirstName = 'clem';
     const userLastName = 'peche';
     return (
-      <div>
-          <img src={userPix} className="User-pix" alt="userPix" />
-          <p>First name : {userFirstName}</p>
-          <p>Last name : {userLastName}</p>
+      <div className="profilconteneur">
+          <p className="userprofil">{userFirstName}</p>
+          <p className="userprofil">{userLastName}</p>
+          <img src={userPix} className="User-pix userprofil" alt="userPix" />
         </div>
 
     );

@@ -8,21 +8,25 @@ class Event extends React.Component {
         this.state = {
             events: [
                 {
+                    title: 'SuperSoccer',
                     place: 'La loupe',
                     date: '22-Août-2017',
                     sport: 'foot',
                     places: 22
                 }, {
+                    title: 'Old School session',
                     place: 'Keragan',
                     date: '10-Septembre-2017',
                     sport: 'surf',
                     places: 10
                 }, {
+                    title: 'ca$h for tricks',
                     place: 'Bordeaux',
                     date: '15-Janvier-2018',
-                    sport: 'foot',
+                    sport: 'skate',
                     places: 20
                 }, {
+                    title: 'Ping-pong show',
                     place: 'Paris',
                     date: '22-Octobre-2017',
                     sport: 'ping-pong',
@@ -34,7 +38,7 @@ class Event extends React.Component {
     render() {
 
         return (
-            <div className="event">
+            <div>
 
                 <singlevent>
                     {this.state.events.map((el, i) => <EventDescrib key={i} {...el}/>)}
@@ -49,12 +53,16 @@ class EventDescrib extends React.Component {
 
     render() {
         return (
-            <ul>
-                <li>{this.props.place}</li>
-                <li>{this.props.date}</li>
-                <li>{this.props.sport}</li>
-                <li>{this.props.places}</li>
-            </ul>
+          <div className="event">
+              <h3 className="eventTitle">{this.props.title}</h3>
+
+                <ul>
+                    <li>Place : {this.props.place}</li>
+                    <li>Date : {this.props.date}</li>
+                    <li>Sport : {this.props.sport}</li>
+                    <li>There is {this.props.places} places left.</li>
+                </ul>
+          </div>
 
         )
     }
